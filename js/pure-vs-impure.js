@@ -1,6 +1,6 @@
 /* Not Pure */
 // can't really count on this to return the same thing ->
-let name = 'Justin';
+let name = "Justin";
 
 function greet() {
   console.log(`hello ${name}...`);
@@ -8,7 +8,7 @@ function greet() {
 
 greet();
 
-name = 'Emily';
+name = "Emily";
 greet();
 
 /* Pure */

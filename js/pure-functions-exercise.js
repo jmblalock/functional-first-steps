@@ -15,10 +15,10 @@ function getWorkshopDate() {
 console.log(getWorkshopDate());
 /*  A function is pure if its output depends on nothing but its inputs, and it always returns the same output if called with the same inputs (in this case, no inputs). */
 
-// #3 
+// #3
 function toHex(n) {
   let hex = n.toString(16);
-  return hex.padStart(2, '0');
+  return hex.padStart(2, "0");
 }
 
 console.log(toHex(1000));
@@ -26,7 +26,7 @@ console.log(toHex(1000));
 
 // #4
 function rgbToHex(R, G, B) {
-  return '#' + [toHex(R), toHex(G), toHex(B)].join('');
+  return "#" + [toHex(R), toHex(G), toHex(B)].join("");
 }
 
 console.log(rgbToHex(200, 200, 200));
@@ -35,8 +35,8 @@ console.log(rgbToHex(200, 200, 200));
 // #5
 function setColor(R, G, B) {
   const hex = rgbToHex(R, G, B);
-  const colorMe = document.getElementById('color-me');
-  colorMe.setAttribute('style', 'color: ' + hex);
+  const colorMe = document.getElementById("color-me");
+  colorMe.setAttribute("style", "color: " + hex);
 }
 
 /* A function is not pure if it does anything besides return its output. Any other effect it has on the program or world is a side effect (in this case, changing the properties of an HTML element on the page). */
@@ -44,14 +44,14 @@ function setColor(R, G, B) {
 // #6
 async function readJsonFile(filename) {
   const file = await fetch(
-    'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson'
+    "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
   );
   return await file.json();
 }
 
 /* A function is not pure if its output depends on the state of the world (in this case, the contents of web-hosted file), or if calling the function at different times with the same inputs can give different outputs. */
 
-// #7 
+// #7
 function writeJsonString(object) {
   return JSON.stringify(object, null, 2);
 }
@@ -65,7 +65,7 @@ function exclusiveOr(A, B) {
 
 /* A function is pure if its output depends on nothing but its inputs, it does nothing except return its output, and it always returns the same output if called with the same input. */
 
-// #9 
+// #9
 function computeTruthTable(operator) {
   const truthValues = [true, false];
   const table = [];
@@ -77,7 +77,8 @@ function computeTruthTable(operator) {
   }
   return table;
 }
-/* A function is pure if its output depends on nothing but its inputs, it does nothing except return its output, and it always returns the same output if called with the same input. */ 
+
+/* A function is pure if its output depends on nothing but its inputs, it does nothing except return its output, and it always returns the same output if called with the same input. */
 
 // #10
 function showTruthTable(operator) {
