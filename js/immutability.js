@@ -1,10 +1,14 @@
 // Array Operations
 // instead of myArray.push(element)
+// function push(element, array) {
+//   // TODO return a new array with the new element at the end
+//   var newArr = array.slice();
+//   newArr[array.length] = element;
+//   return newArr;
+// }
+
 function push(element, array) {
-  // TODO return a new array with the new element at the end
-  var newArr = array.slice();
-  newArr[array.length] = element;
-  return newArr;
+  return [...array, element];
 }
 
 const prePush = [1, 2, 3];
@@ -20,16 +24,27 @@ function update(index, value, array) {
   return newArr;
 }
 
+// function update(index, value, array) {
+//   return array
+//     .slice(0, index - 1)
+//     .concat([value])
+//     .concat(array.slice(index));
+// }
+
 const preUpdate = ["spellling", "is", "hard"];
-const postUpdate = update(0, "spelling", preUpdate);
+const postUpdate = update(0, "spelling", preUpdate); // her solution does not work if the index is 0
 console.log(preUpdate);
 console.log(postUpdate);
 
 // instead of myArray.pop();
+// function pop(array) {
+//   // TODO return a new array with the last element removed
+//   var newArr = array.slice(0, array.length - 1);
+//   return newArr;
+// }
+
 function pop(array) {
-  // TODO return a new array with the last element removed
-  var newArr = array.slice(0, array.length - 1);
-  return newArr;
+  return array.slice(0, -1);
 }
 
 const prePop = [1, 2, 3, "popMe"];
